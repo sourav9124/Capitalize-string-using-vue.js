@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+ <style>
+    .container{
+      height:200px ;
+      width: 200px;
+      padding: 50px;
+      background-color: gray;
+      border:5px solid black;
+      margin:0 auto;
+    }
+    .ip{
+        border: 3px solid green;
+
+    }
+ </style>
+</head>
+<body>
+  <div class="container">
+<div id="app">
+  <input class="ip" v-model="message" placeholder="enter string">
+
+	<p>{{str2}}</p>
+	<button @click="myFunction()">Click To Convert</button>
+</div>
+</div>
+<script>
+ new Vue({
+el: '#app',
+
+  data: {
+	  message:"",
+	  str2:""
+  },
+
+   methods:{
+    myFunction: function () {
+		this.str2 = this.message.toUpperCase();
+    }
+   }
+
+});
+</script>
+</body>
+</html>
